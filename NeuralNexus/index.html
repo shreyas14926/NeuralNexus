@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neural Nexus – Mindscape Odyssey</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="game-container">
+        <canvas id="gameCanvas"></canvas>
+        
+        <!-- UI Overlay -->
+        <div id="ui">
+            <div id="hud">
+                <div class="hud-item">
+                    <span class="label">SCORE</span>
+                    <span id="score">0</span>
+                </div>
+                <div class="hud-item">
+                    <span class="label">COMBO</span>
+                    <span id="combo">x1</span>
+                </div>
+                <div class="hud-item">
+                    <span class="label">IDEAS</span>
+                    <span id="ideas">0</span>
+                </div>
+                <div class="hud-item">
+                    <span class="label">LEVEL</span>
+                    <span id="level">1</span>
+                </div>
+            </div>
+            
+            <div id="ability-bar">
+                <div class="ability" id="ability-expand" title="Expand Network (E)">
+                    <div class="ability-icon">◈</div>
+                    <div class="ability-cd"></div>
+                </div>
+                <div class="ability" id="ability-focus" title="Focus Mode (F)">
+                    <div class="ability-icon">◎</div>
+                    <div class="ability-cd"></div>
+                </div>
+                <div class="ability" id="ability-pulse" title="Neural Pulse (Q)">
+                    <div class="ability-icon">✧</div>
+                    <div class="ability-cd"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Start Screen -->
+        <div id="start-screen" class="screen">
+            <div class="title-glitch" data-text="NEURAL NEXUS">NEURAL NEXUS</div>
+            <p class="subtitle">Mindscape Odyssey</p>
+            <p class="desc">You are a nascent consciousness expanding through a digital mindscape.<br>
+            Collect <span class="highlight">Ideas</span>, connect <span class="highlight">Neurons</span>, avoid <span class="highlight">Corruption</span>.<br>
+            Expand your network. Survive. Evolve.</p>
+            <div class="controls-info">
+                <p><kbd>WASD</kbd> / <kbd>Arrows</kbd> Move &nbsp;•&nbsp; <kbd>E</kbd> Expand &nbsp;•&nbsp; <kbd>F</kbd> Focus &nbsp;•&nbsp; <kbd>Q</kbd> Pulse</p>
+            </div>
+            <button id="start-btn" class="neon-btn">INITIALIZE</button>
+            <p class="highscore">Best Score: <span id="best-score">0</span></p>
+        </div>
+        
+        <!-- Game Over Screen -->
+        <div id="gameover-screen" class="screen hidden">
+            <div class="title-glitch" data-text="CONNECTION LOST">CONNECTION LOST</div>
+            <p class="final-score">Final Score: <span id="final-score">0</span></p>
+            <p class="final-ideas">Ideas Absorbed: <span id="final-ideas">0</span></p>
+            <p class="final-level">Highest Level: <span id="final-level">1</span></p>
+            <button id="restart-btn" class="neon-btn">REBOOT</button>
+            <button id="menu-btn" class="neon-btn secondary">MAINFRAME</button>
+        </div>
+        
+        <!-- Pause Screen -->
+        <div id="pause-screen" class="screen hidden">
+            <div class="title-glitch" data-text="PAUSED">PAUSED</div>
+            <button id="resume-btn" class="neon-btn">RESUME</button>
+            <button id="pause-menu-btn" class="neon-btn secondary">MAINFRAME</button>
+        </div>
+    </div>
+    
+    <script src="game.js"></script>
+</body>
+</html>
